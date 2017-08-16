@@ -12,6 +12,6 @@ int	main(int argc, char **argv)
 	printf("ft_isprint = %d\n", ft_isprint(argv[1][0]));
 	printf("ft_tolower = %c\n", ft_tolower(argv[1][0]));
 	printf("ft_toupper = %c\n", ft_toupper(argv[1][0]));
-	ft_bzero(var_bzero, 1);
+	ft_bzero(var_bzero, 8);
 	printf("bzero = %s\n", var_bzero);
 }
