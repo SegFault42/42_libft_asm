@@ -1,4 +1,16 @@
-NAME = libft_asm.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
+#    Updated: 2017/08/18 05:17:08 by rabougue         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libfts.a
 
 SRC =	./source/ft_isascii.s\
 		./source/ft_isdigit.s\
@@ -8,6 +20,7 @@ SRC =	./source/ft_isascii.s\
 		./source/ft_tolower.s\
 		./source/ft_toupper.s\
 		./source/ft_bzero.s\
+		./source/ft_strlen.s\
 
 OBJS = $(SRC:.s=.o)
 
@@ -31,4 +44,4 @@ fclean: clean
 re: fclean all
 
 test:
-	gcc -o test main.c ./libft_asm.a -I ./include/
+	gcc -o test main_test.c $(NAME) -I ./include/
