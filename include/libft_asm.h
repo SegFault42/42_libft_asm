@@ -12,6 +12,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_bzero(void *buff, size_t size);
 char	*ft_strcat(char *dst, const char *src);
-int		ft_strlen(char *string);
+size_t	ft_strlen(char *str);
+int		ft_puts(char *str);
 
 #endif
