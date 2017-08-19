@@ -6,7 +6,7 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/19 00:21:26 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/19 05:35:44 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC =	./source/ft_isascii.s\
 		./source/ft_bzero.s\
 		./source/ft_strlen.s\
 		./source/ft_puts.s\
+		./source/ft_strcat.s\
 
 OBJS = $(SRC:.s=.o)
 

@@ -6,7 +6,7 @@ _ft_strcat:
 	jmp go_to_null_char
 
 go_to_null_char:
-	cmp rdi, 0
+	cmp byte[rdi], 0
 	je copy_str
 	inc rdi
 	jmp go_to_null_char
@@ -20,4 +20,4 @@ copy_str:
 
 end:
 	mov rdi, rax
-	re
+	ret

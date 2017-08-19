@@ -56,4 +56,10 @@ int	main(int argc, char **argv)
 	ft_puts("Hello world !");
 	printf(RED"   puts = \n");
 	puts("Hello world !");
+
+	char var_strcat[20] = "test";
+
+	ft_strcat(var_strcat, " lol");
+	printf("%s\n", var_strcat);
+
 }
