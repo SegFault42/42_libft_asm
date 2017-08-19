@@ -12,12 +12,15 @@ go_to_null_char:
 	jmp go_to_null_char
 
 copy_str:
-	cmp rsi, 0
+	cmp byte[rsi], 0
 	je end
-	mov rsi, rdi
-	inc rdi
+	mov r9, [rsi]
+	mov [rdi], r9
 	inc rsi
+	inc rdi
+	jmp copy_str
 
 end:
-	mov rdi, rax
+	mov [rdi], byte 0
+	mov rax, rdi
 	ret

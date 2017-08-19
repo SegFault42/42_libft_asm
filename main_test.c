@@ -59,7 +59,6 @@ int	main(int argc, char **argv)
 
 	char var_strcat[20] = "test";
 
-	ft_strcat(var_strcat, " lol");
+	char *test = ft_strcat(var_strcat, " lol");
 	printf("%s\n", var_strcat);
-
 }
