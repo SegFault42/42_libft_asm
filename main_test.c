@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 #define STR		"Hello world!"
+#define STR_CAT		"Hello world"
 #define GREEN	"\033[1;32m"
 #define RED		"\033[1;31m"
 #define END		"\033[0m"
@@ -56,9 +57,13 @@ int	main(int argc, char **argv)
 	ft_puts("Hello world !");
 	printf(RED"   puts = \n");
 	puts("Hello world !");
+	puts("");
 
-	char var_strcat[20] = "test";
+	char var_ft_strcat[20] = "Bonjour";
+	char var_strcat[20] = "Bonjour";
 
-	char *test = ft_strcat(var_strcat, " lol");
-	printf("%s\n", var_strcat);
+	char *ft_test = ft_strcat(var_ft_strcat, STR_CAT);
+	char *test = strcat(var_strcat, STR_CAT);
+	printf(GREEN"%s\n", ft_test);
+	printf(RED"%s\n", test);
 }
