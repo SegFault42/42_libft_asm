@@ -14,5 +14,6 @@ void	ft_bzero(void *buff, size_t size);
 char	*ft_strcat(char *dst, const char *src);
 size_t	ft_strlen(char *str);
 int		ft_puts(char *str);
+void	ft_memset(void *s, int c, size_t n);
 
 #endif

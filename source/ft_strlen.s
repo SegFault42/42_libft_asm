@@ -18,11 +18,13 @@ section .text
 	;ret
 
 _ft_strlen:
-	xor rcx, rcx	; init rcx a 0
+	push rdi
 	mov rax, 0		; met '\0' dans rax
-	not rcx			; inversse rcx
+	xor rcx, rcx	; init rcx a 0
+	sub rcx, 1		; inversse rcx
 	repne scasb		; (repne = REP while Not Equal) (scasb = searching for first elem equal with rax) avance dans la chaine et decremente rcx
 	not rcx			; re-inversse rcx
-	dec rcx			; decremente de 1
+	sub rcx, 1		; decremente de 1
 	mov rax, rcx	; copy rcx dans rax
+	pop rdi
 	ret
