@@ -65,8 +65,8 @@ int	main(int argc, char **argv)
 
 	char *ft_test = ft_strcat(var_ft_strcat, STR_CAT);
 	char *test = strcat(var_strcat, STR_CAT);
-	printf(GREEN"%s\n", ft_test);
-	printf(RED"%s\n", test);
+	printf(GREEN"ft_strcat = %s\n", ft_test);
+	printf(RED"   strcat = %s\n", test);
 	puts("");
 //=============================================================================
 	char var_ft_memset[100] = "qwerqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbtyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvb";
@@ -78,4 +78,12 @@ int	main(int argc, char **argv)
 	var_memset[99] = 0;
 	printf(GREEN"%s\n"END, var_ft_memset);
 	printf(RED"%s\n"END, var_memset);
+//=============================================================================
+	char	var_ft_memcpy[100] = "je suis un ordinateur lol !";
+	char	var_memcpy[100] = "je suis un ordinateur lol !";
+
+	char *test_ft = ft_memcpy(&var_ft_memcpy, "xxxxxx", 6);
+	char *test_no_ft = memcpy(&var_memcpy, "xxxxxx", 6);
+	printf(GREEN"ft_memcpy = %s\n"END, test_ft);
+	printf(RED"   memcpy = %s\n"END, test_no_ft);
 }

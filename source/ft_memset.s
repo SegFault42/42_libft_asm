@@ -7,7 +7,7 @@ _ft_memset:
 
 	mov rcx, rdx	; move size dans rcx
 	mov rax, rsi	; mov charactere we need in rax
-	rep stosb		; (rep = rep while rcx != 0) (stosb ajoute dans rdi rax) avance dans rdi rcx fois et remplie par rax
+	rep stosb		; (rep = rep while rcx != 0) (stosb ajoute dans rdi rax) avance dans rdi rcx fois et remplie rdi par rax
 
 	pop rax			; pop rdi in rax
 	ret
