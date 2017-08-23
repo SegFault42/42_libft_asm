@@ -6,25 +6,26 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/22 03:49:36 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/22 23:58:05 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfts.a
 
-SRC =	./source/ft_isascii.s\
+SRC =	./source/ft_puts.s\
+		./source/ft_bzero.s\
+		./source/ft_strlen.s\
+		./source/ft_strcat.s\
+		./source/ft_memset.s\
+		./source/ft_memcpy.s\
+		./source/ft_strdup.s\
+		./source/ft_isascii.s\
 		./source/ft_isdigit.s\
 		./source/ft_isalpha.s\
 		./source/ft_isalnum.s\
 		./source/ft_isprint.s\
 		./source/ft_tolower.s\
 		./source/ft_toupper.s\
-		./source/ft_bzero.s\
-		./source/ft_strlen.s\
-		./source/ft_puts.s\
-		./source/ft_strcat.s\
-		./source/ft_memset.s\
-		./source/ft_memcpy.s\
 
 OBJS = $(SRC:.s=.o)
 

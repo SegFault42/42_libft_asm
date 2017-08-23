@@ -1,5 +1,5 @@
 global _ft_memcpy
-
+;					rdi				rsi			rdx
 ; void	*memcpy(void *dest, const void *src, size_t n);
 
 _ft_memcpy:

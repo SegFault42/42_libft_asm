@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
 	var_memset[99] = 0;
 	printf(GREEN"%s\n"END, var_ft_memset);
 	printf(RED"%s\n"END, var_memset);
+	puts("");
 //=============================================================================
 	char	var_ft_memcpy[100] = "je suis un ordinateur lol !";
 	char	var_memcpy[100] = "je suis un ordinateur lol !";
@@ -86,4 +87,20 @@ int	main(int argc, char **argv)
 	char *test_no_ft = memcpy(&var_memcpy, "xxxxxx", 6);
 	printf(GREEN"ft_memcpy = %s\n"END, test_ft);
 	printf(RED"   memcpy = %s\n"END, test_no_ft);
+	puts("");
+//=============================================================================
+	char	var_ft_strdup[100] = "Bonjour je suis ft_strdup";
+	char	var_strdup[100] = "Bonjour je suis strdup";
+
+	char	*test_ft_strdup = ft_strdup(var_ft_strdup);
+	char	*test_strdup = strdup(var_strdup);
+
+	if (test_ft_strdup != NULL || test_strdup != NULL)
+	{
+		printf(GREEN"ft_strdup = %s\n"END, test_ft_strdup);
+		printf(RED"   strdup = %s\n"END, test_strdup);
+	}
+	else
+		printf("NULL\n");
+	puts("");
 }
