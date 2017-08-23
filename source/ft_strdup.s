@@ -5,32 +5,36 @@ section .text
 	extern _malloc
 	extern _ft_strlen
 	extern _ft_memcpy
+	extern _ft_bzero
 	extern _sleep
 	extern _puts
 
 _ft_strdup:
+	push rsi
 	push rdi
 
 	call _ft_strlen	; count len of rdi
-	;mov rcx, rax	; copy len dans rcx
-	;mov rdi, rcx	; met dans rdi la len de la string a dupliquer
-	mov rdi, rax
-
-	inc rdi
+	inc rax			; incremente la len de 1 pour le \0
+	push rax		; save len dans la stack
+	mov rdi, rax	; met la len dans le 1st param
 	call _malloc	; sans commentaire
 	cmp rax, 0
 	je got_to_null	; if malloc == NULL return NULL
 
+	mov rsi, rdi	; copy la len dans rdi
+	mov rdi, rax	; copy le pointeur renvoyer par malloc dans rdi
+	call _ft_bzero	; lol
 
-
-	mov rdx, rdi
-	mov rdi, rax	; set first param (retour de malloc dans rdi)
+	pop rdx			; pop rax dans rdx (len)
 	pop rsi			; set secnd param (pop rdi dans rsi)
-	;mov rdx, rcx	; set third param (retour de strlen dans rdx)
-	call _ft_memcpy
+	call _ft_memcpy ; loul
+	pop rsi
 
 	ret
 
 got_to_null:
+	pop rax
+	pop rdi
+	pop rsi
 	mov rax, 0 ; return NULL
 	ret

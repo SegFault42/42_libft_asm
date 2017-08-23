@@ -80,8 +80,8 @@ int	main(int argc, char **argv)
 	printf(RED"%s\n"END, var_memset);
 	puts("");
 //=============================================================================
-	char	var_ft_memcpy[100] = "je suis un ordinateur lol !";
-	char	var_memcpy[100] = "je suis un ordinateur lol !";
+	char	var_ft_memcpy[1000] = "je suis un ordinateur lol !";
+	char	var_memcpy[1000] = "je suis un ordinateur lol !";
 
 	char *test_ft = ft_memcpy(&var_ft_memcpy, "xxxxxx", 6);
 	char *test_no_ft = memcpy(&var_memcpy, "xxxxxx", 6);
@@ -89,8 +89,8 @@ int	main(int argc, char **argv)
 	printf(RED"   memcpy = %s\n"END, test_no_ft);
 	puts("");
 //=============================================================================
-	char	var_ft_strdup[100] = "Bonjour je suis ft_strdup";
-	char	var_strdup[100] = "Bonjour je suis strdup";
+	char	var_ft_strdup[1000] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
+	char	var_strdup[1000] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
 
 	char	*test_ft_strdup = ft_strdup(var_ft_strdup);
 	char	*test_strdup = strdup(var_strdup);
