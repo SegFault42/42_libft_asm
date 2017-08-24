@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <strings.h>
 #include <ctype.h>
+#include <fcntl.h>
 
 #define STR		"Hello world!"
 #define STR_CAT		"Hello world"
@@ -103,4 +104,13 @@ int	main(int argc, char **argv)
 	else
 		printf("NULL\n");
 	puts("");
+//=============================================================================
+	int fd = 0;
+	fd = open(argv[2], O_RDONLY);
+	if (fd < 0)
+	{
+		printf("open failure !\n");
+		return (-1);
+	}
+	ft_cat(fd);
 }
