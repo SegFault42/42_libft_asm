@@ -12,7 +12,10 @@ section .text
 ; void	ft_cat(int fd);
 
 _ft_cat:
-	push rdi
+	cmp rdi, 0				; verification du fd
+	jl error_or_finish
+
+	push rdi			;save rdi
 
 	mov rdi, buff		; copy le buffer dans 1st param
 	mov rsi, BUFF_SIZE	; met la len dans le deuxieme param
@@ -27,6 +30,8 @@ loop:
 
 	cmp rax, 0
 	jle error_or_finish
+
+	mov byte[rsi + rax], 0
 
 	mov rcx, rax
 	push rdi

@@ -109,7 +109,7 @@ int	main(int argc, char **argv)
 	fd = open(argv[2], O_RDONLY);
 	if (fd < 0)
 	{
-		printf("open failure !\n");
+		dprintf(2, "open failure !\n");
 		return (-1);
 	}
 	ft_cat(fd);
