@@ -5,14 +5,14 @@ section .bss
 	buff resb BUFF_SIZE
 
 section .text
-	extern _ft_putstr
+	extern _ft_putstr_len
 	extern _ft_bzero
 	global _ft_cat
 
 ; void	ft_cat(int fd);
 
 _ft_cat:
-	cmp rdi, 0				; verification du fd
+	cmp edi, 0				; verification du fd
 	jl error_or_finish
 
 	push rdi			;save rdi
@@ -28,6 +28,7 @@ loop:
 	mov rax, 0x2000003	; addr de read
 	syscall				; read syscall
 
+	jc error_or_finish
 	cmp rax, 0
 	jle error_or_finish
 
@@ -37,7 +38,8 @@ loop:
 	push rdi
 
 	mov rdi, rsi		; buffer dans 1st param de read
-	call _ft_putstr		; apelle puts
+	mov rsi, rax
+	call _ft_putstr_len		; apelle putstr
 
 	jmp loop
 

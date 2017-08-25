@@ -6,7 +6,7 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/24 02:32:22 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/24 23:22:17 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC =	./source/ft_puts.s\
 		./source/ft_cat.s\
 		./source/ft_strlen.s\
 		./source/ft_putstr.s\
+		./source/ft_putstr_len.s\
 		./source/ft_strcat.s\
 		./source/ft_memset.s\
 		./source/ft_memcpy.s\

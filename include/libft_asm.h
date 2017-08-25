@@ -12,6 +12,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_puts(char *str);
 void	ft_putstr(char *str);
+void	ft_putstr_len(char *str, size_t len);
 size_t	ft_strlen(char *str);
 char	*ft_strdup(const char *str);
 void	ft_bzero(void *buff, size_t size);
