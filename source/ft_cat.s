@@ -9,37 +9,26 @@ section .text
 	extern _ft_bzero
 	global _ft_cat
 
-; void	ft_cat(int fd);
-
 _ft_cat:
 	cmp edi, 0				; verification du fd
 	jl error_or_finish
 
-	push rdi			;save rdi
-
-	mov rdi, buff		; copy le buffer dans 1st param
-	mov rsi, BUFF_SIZE	; met la len dans le deuxieme param
-	call _ft_bzero		; apelle bzero
+	mov r10, rdi ; sauvegarde du fd dans r10
 
 loop:
 	mov rsi, buff		; move le buffer dans rsi
-	pop rdi				; pop le fd dans le first param
+	mov rdi, r10		; fd in first arg
 	mov rdx, STR_LEN	; set third param pour bzero
 	mov rax, 0x2000003	; addr de read
 	syscall				; read syscall
 
-	jc error_or_finish
-	cmp rax, 0
+	jc error_or_finish	; read error
+	cmp rax, 0			; nothing to read
 	jle error_or_finish
 
-	mov byte[rsi + rax], 0
-
-	mov rcx, rax
-	push rdi
-
-	mov rdi, rsi		; buffer dans 1st param de read
-	mov rsi, rax
-	call _ft_putstr_len		; apelle putstr
+	mov rdi, buff		; buffer dans 1st param de read
+	mov rsi, rax		; set len with read return
+	call _ft_putstr_len	; apelle putstr
 
 	jmp loop
 

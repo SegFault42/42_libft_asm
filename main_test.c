@@ -1,6 +1,7 @@
 #include "libft_asm.h"
 #include <stdio.h>
 #include <strings.h>
+#include <unistd.h>
 #include <ctype.h>
 #include <fcntl.h>
 
@@ -109,8 +110,25 @@ int	main(int argc, char **argv)
 	fd = open(argv[2], O_RDONLY);
 	if (fd < 0)
 	{
-		dprintf(2, "open failure !\n");
+		dprintf(2, "open argv2 failure !\n");
 		return (-1);
 	}
 	ft_cat(fd);
+	close(fd);
+	puts("");
+//=============================================================================
+	char	var_ft_strclen[] = "fljkhsdlkfhkldsjhFg;dGF|ljfgsflg";
+
+	printf(GREEN"var_ft_strclen = %ld\n"END, ft_strclen(var_ft_strclen, '|'));
+	puts("");
+//=============================================================================
+	fd = open(argv[3], O_RDWR);
+	if (fd < 0)
+	{
+		dprintf(2, "open argv3 failure !\n");
+		return (-1);
+	}
+	ft_puts_fd("loullkshfgkj", fd);
+	close(fd);
+	puts("");
 }

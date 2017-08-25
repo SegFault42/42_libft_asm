@@ -6,7 +6,7 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/24 23:22:17 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/25 04:29:58 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,6 @@ SRC =	./source/ft_puts.s\
 		./source/ft_bzero.s\
 		./source/ft_cat.s\
 		./source/ft_strlen.s\
-		./source/ft_putstr.s\
-		./source/ft_putstr_len.s\
 		./source/ft_strcat.s\
 		./source/ft_memset.s\
 		./source/ft_memcpy.s\
@@ -29,6 +27,11 @@ SRC =	./source/ft_puts.s\
 		./source/ft_isprint.s\
 		./source/ft_tolower.s\
 		./source/ft_toupper.s\
+		\
+		./source/ft_putstr.s\
+		./source/ft_putstr_len.s\
+		./source/ft_strclen.s\
+		./source/ft_puts_fd.s\
 
 OBJS = $(SRC:.s=.o)
 

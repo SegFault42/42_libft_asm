@@ -1,10 +1,10 @@
-global _ft_strlen
+global _ft_strclen
 
 section .text
 
-_ft_strlen:
+_ft_strclen:
 	push rdi
-	mov rax, 0		; met '\0' dans rax
+	mov rax, rsi		; met '\0' dans rax
 	xor rcx, rcx	; init rcx a 0
 	sub rcx, 1		; inversse rcx
 	repne scasb		; (repne = REP while Not Equal) (scasb = searching for first elem equal with rax) avance dans la chaine et decremente rcx
