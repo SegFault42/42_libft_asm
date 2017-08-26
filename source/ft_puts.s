@@ -1,7 +1,6 @@
 global _ft_puts
 
 extern _ft_strlen
-extern _sleep
 
 section .data
 str:

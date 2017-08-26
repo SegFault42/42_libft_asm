@@ -6,7 +6,7 @@
 #include <fcntl.h>
 
 #define STR		"Hello world!"
-#define STR_CAT		"Hello world"
+#define STR_CAT	"Hello world"
 #define GREEN	"\033[1;32m"
 #define RED		"\033[1;31m"
 #define END		"\033[0m"
@@ -91,20 +91,20 @@ int	main(int argc, char **argv)
 	printf(RED"   memcpy = %s\n"END, test_no_ft);
 	puts("");
 //=============================================================================
-	char	var_ft_strdup[1000] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
-	char	var_strdup[1000] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
+	/*char	var_ft_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";*/
+	/*char	var_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";*/
 
-	char	*test_ft_strdup = ft_strdup(var_ft_strdup);
-	char	*test_strdup = strdup(var_strdup);
+	/*char	*test_ft_strdup = ft_strdup(var_ft_strdup);*/
+	/*char	*test_strdup = strdup(var_strdup);*/
 
-	if (test_ft_strdup != NULL || test_strdup != NULL)
-	{
-		printf(GREEN"ft_strdup = %s\n"END, test_ft_strdup);
-		printf(RED"   strdup = %s\n"END, test_strdup);
-	}
-	else
-		printf("NULL\n");
-	puts("");
+	/*if (test_ft_strdup != NULL || test_strdup != NULL)*/
+	/*{*/
+		/*printf(GREEN"ft_strdup = %s\n"END, test_ft_strdup);*/
+		/*printf(RED"   strdup = %s\n"END, test_strdup);*/
+	/*}*/
+	/*else*/
+		/*printf("NULL\n");*/
+	/*puts("");*/
 //=============================================================================
 	int fd = 0;
 	fd = open(argv[2], O_RDONLY);
@@ -131,4 +131,22 @@ int	main(int argc, char **argv)
 	ft_puts_fd("loullkshfgkj", fd);
 	close(fd);
 	puts("");
+//=============================================================================
+	char *var_memmalloc = (char *)ft_memmalloc(sizeof(char) * 100);
+
+	printf(GREEN"ft_memmalloc = %s\n"END, var_memmalloc);
+	puts("");
+//=============================================================================
+	char var_ft_strncat[20] = "loul";
+	char var_strncat[20] = "loul";
+
+	char *ft_tes = ft_strncat(var_ft_strncat, " je suis lol", 5);
+	char *tes = strncat(var_strncat, " je suis lol", 5);
+	printf(GREEN"ft_strncat = %s\n", ft_tes);
+	printf(RED"   strncat = %s\n", tes);
+	puts("");
+//=============================================================================
+	printf(GREEN"ft_addition(5 + 3) = %d\n"END, ft_addition(5, 3));
+	puts("");
+//=============================================================================
 }

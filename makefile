@@ -6,7 +6,7 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/25 04:29:58 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/26 02:27:01 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ SRC =	./source/ft_puts.s\
 		./source/ft_putstr_len.s\
 		./source/ft_strclen.s\
 		./source/ft_puts_fd.s\
+		./source/ft_memmalloc.s\
+		./source/ft_strncat.s\
+		./source/ft_addition.s\
 
 OBJS = $(SRC:.s=.o)
 

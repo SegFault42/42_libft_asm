@@ -1,5 +1,4 @@
-%define BUFF_SIZE	101
-%define STR_LEN		BUFF_SIZE -1
+%define BUFF_SIZE	100
 
 section .bss
 	buff resb BUFF_SIZE

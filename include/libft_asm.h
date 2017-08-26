@@ -20,7 +20,11 @@ char	*ft_strdup(const char *str);
 void	ft_bzero(void *buff, size_t size);
 void	ft_memset(void *s, int c, size_t n);
 char	*ft_strcat(char *dst, const char *src);
+char	*ft_strncat(char *dst, const char *src, size_t size);
+void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 void	ft_cat(int fd);
+void	*ft_memmalloc(size_t size);
+int		ft_addition(int a, int b);
 
 #endif
