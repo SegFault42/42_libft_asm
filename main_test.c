@@ -91,20 +91,20 @@ int	main(int argc, char **argv)
 	printf(RED"   memcpy = %s\n"END, test_no_ft);
 	puts("");
 //=============================================================================
-	/*char	var_ft_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";*/
-	/*char	var_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";*/
+	char	var_ft_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
+	char	var_strdup[] = "Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200.";
 
-	/*char	*test_ft_strdup = ft_strdup(var_ft_strdup);*/
-	/*char	*test_strdup = strdup(var_strdup);*/
+	char	*test_ft_strdup = ft_strdup(var_ft_strdup);
+	char	*test_strdup = strdup(var_strdup);
 
-	/*if (test_ft_strdup != NULL || test_strdup != NULL)*/
-	/*{*/
-		/*printf(GREEN"ft_strdup = %s\n"END, test_ft_strdup);*/
-		/*printf(RED"   strdup = %s\n"END, test_strdup);*/
-	/*}*/
-	/*else*/
-		/*printf("NULL\n");*/
-	/*puts("");*/
+	if (test_ft_strdup != NULL || test_strdup != NULL)
+	{
+		printf(GREEN"ft_strdup = %s\n"END, test_ft_strdup);
+		printf(RED"   strdup = %s\n"END, test_strdup);
+	}
+	else
+		printf("NULL\n");
+	puts("");
 //=============================================================================
 	int fd = 0;
 	fd = open(argv[2], O_RDONLY);
@@ -128,7 +128,7 @@ int	main(int argc, char **argv)
 		dprintf(2, "open argv3 failure !\n");
 		return (-1);
 	}
-	ft_puts_fd("loullkshfgkj", fd);
+	ft_puts_fd("Je peux ecrire dans n'importe qu'elle fd", fd);
 	close(fd);
 	puts("");
 //=============================================================================
@@ -146,7 +146,19 @@ int	main(int argc, char **argv)
 	printf(RED"   strncat = %s\n", tes);
 	puts("");
 //=============================================================================
-	printf(GREEN"ft_addition(5 + 3) = %d\n"END, ft_addition(5, 3));
+	char	*var_strclr = malloc(100);
+
+	ft_memset(var_strclr, 'a', 99);
+	printf(GREEN"var_strclr (before clear) = %s\n"END, var_strclr);
+	ft_strclr(var_strclr);
+	printf(GREEN"var_strclr  (after clear) = "END);
+	for (int i = 0; i < 99; ++i)
+		printf(GREEN"%c"END, var_strclr[i]);
+	puts("");
 	puts("");
 //=============================================================================
+	char *strequ_1 = "abcde";
+	char *strequ_2 = "abcde";
+
+	printf(GREEN"ft_strequ = %d\n"END, ft_strequ(strequ_1, strequ_2));
 }

@@ -6,7 +6,6 @@ section .text
 	extern _ft_strlen
 	extern _ft_memcpy
 	extern _ft_bzero
-	extern _sleep
 	extern _puts
 
 _ft_strdup:

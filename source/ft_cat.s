@@ -15,9 +15,9 @@ _ft_cat:
 	mov r10, rdi ; sauvegarde du fd dans r10
 
 loop:
-	mov rsi, buff		; move le buffer dans rsi
+	lea rsi, [rel buff]		; move le buffer dans rsi
 	mov rdi, r10		; fd in first arg
-	mov rdx, STR_LEN	; set third param pour bzero
+	mov rdx, BUFF_SIZE	; set third param pour bzero
 	mov rax, 0x2000003	; addr de read
 	syscall				; read syscall
 
@@ -25,7 +25,7 @@ loop:
 	cmp rax, 0			; nothing to read
 	jle error_or_finish
 
-	mov rdi, buff		; buffer dans 1st param de read
+	lea rdi, [rel buff]		; buffer dans 1st param de read
 	mov rsi, rax		; set len with read return
 	call _ft_putstr_len	; apelle putstr
 
