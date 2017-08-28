@@ -6,7 +6,7 @@
 #    By: rabougue <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 21:31:16 by rabougue          #+#    #+#              #
-#    Updated: 2017/08/27 05:11:33 by rabougue         ###   ########.fr        #
+#    Updated: 2017/08/28 04:48:11 by rabougue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,5 +58,4 @@ fclean: clean
 
 re: fclean all
 
-test:
-	gcc -o test main_test.c $(NAME) -I ./include/
+# unit test compilation : gcc test/main_test.c test/simple_function.c ./libfts.a
